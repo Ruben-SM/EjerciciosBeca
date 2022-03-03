@@ -11,5 +11,10 @@ public class Suma {
 		return acc+=a;
 	}
 
+	public static void main(String[] args) {
+		System.out.println("la suma de 1 y 2 es: "+sum(1,2));
+		System.out.println("le añado 2 y tengo: "+sum(2));
+		System.out.println("le añado 3 y tengo: "+sum(3));
+	}
 
 }
