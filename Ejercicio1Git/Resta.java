@@ -11,5 +11,10 @@ public class Resta {
 		return acc-=a;
 	}
 	
+	public static void main(String[] args) {
+		System.out.println("la resta de 2 y 1 es: "+res(2,1));
+		System.out.println("le quito 2 y tengo: "+res(2));
+		System.out.println("le quito 3 y tengo: "+res(3));
+	}
 
 }
