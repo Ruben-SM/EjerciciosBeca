@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio2HTML</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Todo Videojuegos</h1>
+        <center><img src="https://www.trecebits.com/wp-content/uploads/2019/04/11854.jpg"  width = "500" height = "200" alt = "Todo Videojuegos"/></center>
+        <marquee>
+            <h2>Bienvenido, introduzca sus datos</h2>
+        </marquee>
+        <fieldset>
+        <legend>Datos personales:</legend>
+        <form action="procesarPeticion.jsp" method="post">
+            <input type="text" name="edad" placeholder="Nombre de usuario" required/>
+            <input type="password" name="edad" placeholder="Contraseña" required/>
+            <br/>
+            <input type="number" min="1" max="99" step="1" name="edad" placeholder="Edad" />
+            <input type="email" name="email" placeholder="Correo Electronico"/>
+            <br/>
+            <br/>
+            <label for="plataforma">Genero: </label>
+            <input type="radio" name="genero" value="M"/>Masculino	
+            <input type="radio" name="genero" value="F"/>Femenino	
+            <br/>
+            <br/>
+            <label for="plataforma">En que plataformas juegas: </label>
+            <br />	
+            <input type="checkbox" name="plataforma" value="PC" />PC<br />	
+            <input type="checkbox" name="plataforma" value="PS" />PlayStation<br />	
+            <input type="checkbox" name="plataforma" value="XB" />Xbox<br />	
+            <input type="checkbox" name="plataforma" value="N" />Nintendo<br />	
+            <br/>
+            <br/>
+            <input type="submit" value="Enviar"/>
+            <input type="reset" value="Limpiar formulario"/>
+            <a href="page.html">Entrar al sitio web</a>
+        </fieldset>
+        </form>
+    </body>
+</html>
