@@ -1,0 +1,88 @@
+.titulo{
+    color: azure;
+    font-family: Arial;
+}
+
+.subtitulo{
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Courier New';
+    font-size: 20px;
+}
+
+div.final{
+    text-align: right;
+    padding-right: 20px;
+}
+
+h2.negro{
+    color: black;
+}
+
+h2{
+    color: coral;
+    text-align: center;
+}
+
+
+th{
+    background-color: coral;
+}
+
+header{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+} 
+
+main{
+    background-color:bisque
+}
+
+marquee{
+    background-color: white;
+}
+
+hr{
+    border: 1px #000 solid; 
+}
+
+
+div.ordenada, div.desordenada{
+    background-color: azure;
+    font-family: sans-serif;
+    position: relative;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 1em;
+    padding-left: 25px;
+    padding: auto;
+    text-align: left;
+    border: 1px #000 solid;
+    border-width: 5px;
+    margin: auto;
+    width: 1000px;
+}
+
+
+div.tabla{
+    font-family: Arial;
+    padding-left: 250px;
+}
+
+table{
+    background-color: azure;
+    border: 1px #000 solid;
+    border-spacing: "5px";
+    border-collapse: separate;
+    padding: "10px";
+
+}
+
+table,td,tr,th{
+    border: 1px #000 solid; 
+    border-width: 2px;
+    width: 30%;
+    text-align: center;
+}
+
