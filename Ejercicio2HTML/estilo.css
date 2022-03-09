@@ -1,14 +1,34 @@
+@media screen and (max-width: 1600px){
+
+    main,header{
+        width:1100px;
+    }
+
+}
+
+body{
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: rgb(41, 35, 27);
+}
 .titulo{
     color: azure;
     font-family: Arial;
 }
 
 .subtitulo{
-    text-decoration: underline;
     font-weight: bold;
     text-align: center;
-    font-family: 'Courier New';
+    font-family: sans-serif;
     font-size: 20px;
+}
+
+.boton{   
+    font-weight: bold;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 25px;
+    background-color: coral;
+    text-align: center;
 }
 
 div.final{
@@ -18,6 +38,13 @@ div.final{
 
 h2.negro{
     color: black;
+}
+
+a:link{
+    color: red;
+}
+a:visited{
+    color: green; 
 }
 
 h2{
@@ -41,6 +68,7 @@ main{
 
 marquee{
     background-color: white;
+    color: coral;
 }
 
 hr{
@@ -60,8 +88,9 @@ div.ordenada, div.desordenada{
     text-align: left;
     border: 1px #000 solid;
     border-width: 5px;
-    margin: auto;
-    width: 1000px;
+    margin-top: 40px;
+    margin-left: 250px;
+    width: 600px;
 }
 
 
@@ -82,7 +111,49 @@ table{
 table,td,tr,th{
     border: 1px #000 solid; 
     border-width: 2px;
-    width: 30%;
+    width: 40%;
     text-align: center;
 }
+
+.texto1,.texto2{
+    width: 95%;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+
+}
+
+.cita{
+    font-family:'Franklin Gothic Medium';
+    float: right;
+    padding-right: 100px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    width: 250px;
+}
+
+.img1{
+    float: left;
+    padding-right: 20px;
+}
+
+.img2{
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+.texto1:first-letter{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+q::before, q::after{
+    color: blue;
+    font-size: 30px;
+}
+
+
+
 
