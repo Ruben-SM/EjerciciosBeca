@@ -1,0 +1,50 @@
+@media screen and (max-width: 1200px){
+
+    main,header{
+        width:1080px;
+    }
+
+}
+
+#nombre {
+    text-align: center;
+}
+
+
+.negrita {
+    font-weight: bold; 
+ }
+
+
+header,main{
+    background-color: #d9ecff;
+    font-family:"Calibri";
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+div{
+    border-width: 2px;
+    border-style: solid;
+    padding-left: 20px;
+}
+
+p,ul{
+    margin: 2px;
+}
+
+h2{
+    background-color: rgb(236, 167, 122);
+}
+
+
+.tabular{
+    margin-left: 15px;
+}
+.tabular2{
+    margin-left: 62px;
+}
+.tabular3{
+    margin-left: 109px;
+}
