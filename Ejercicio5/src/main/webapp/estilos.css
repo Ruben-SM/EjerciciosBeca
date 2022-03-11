@@ -1,0 +1,70 @@
+body{
+	background-color: #FEFFAB;
+}
+
+h1{
+	color:blue;
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+	color: coral;
+	background-color: white;
+	margin-left: 30%;
+	margin-right: 30%;
+	border-style: solid;
+}
+
+
+form{
+	border-width: 2%;
+	margin-left: 39%;
+	margin-right: 39%;
+	padding-left: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	border-right: auto;
+    border-style: solid;
+    background-color: #98e7e0;
+}
+
+input {
+	width: 90%;
+	padding: 2% 2%;
+	margin: 8%, 0%;
+	box-sizing: border-box;
+	font-weight: bold;
+}
+
+.boton{
+	margin-top:5%;
+	background-color: coral;
+}
+
+div{
+	border-width: 2%;
+    border-style: solid;
+	background-color: #98e7e0;
+	margin-left: 20%;
+	margin-right: 20%;
+	padding-left:2%;
+	padding-bottom: 2%;
+	
+
+}
+
+.volver{
+	padding-top: 2%;
+}
+
+a:link{
+	color: red;
+}
+a:visited{
+	color :red;
+}
+a:hover {
+	color:black;
+}
+
