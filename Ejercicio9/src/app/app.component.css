@@ -1,0 +1,48 @@
+@media screen and (max-width: 1200px){
+
+    main,header{
+        width:90%;
+    }
+
+}
+
+#nombre {
+    text-align: center;
+}
+
+
+.negrita {
+    font-weight: bold; 
+ }
+
+ .cursiva{
+    font-style: italic;
+ }
+
+
+header,main{
+    background-color: #d9ecff;
+    font-family:"Calibri";
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+div{
+    border-width: 2%;
+    border-style: solid;
+    padding-left: 2%;
+}
+
+p,ul{
+    margin: 1%;
+}
+
+h2{
+    background-color: rgb(236, 167, 122);
+}
+
+
+.margen{
+    margin-left: 3%;
+}
