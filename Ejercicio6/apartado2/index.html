@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 6</title>
+        <link rel="stylesheet" href="estilos.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <h1> Ejercicio Calculadora</h1>
+
+        <div class="operandos">
+            Operando 1 <input type="number" id = "n1" placeholder="Introduce Número"/>
+            Operando 2 <input type="number" id = "n2" placeholder="Introduce Número"/>
+        </div>
+        <div class="calculo">
+            <input type="submit" value="+" onclick="sumar()" />
+            <input type="submit" value="-" onclick="restar()" />
+            <input type="submit" value="*" onclick="multiplicar()" />
+            <input type="submit" value="/" onclick="dividir()" />
+        </div>
+        <div class="resultado">
+            <input type="number" id = "resultado" placeholder="Pulsa un botón" readonly="readonly"/>
+        </div>
+    </body>
+</html>

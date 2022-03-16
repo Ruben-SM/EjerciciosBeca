@@ -1,0 +1,40 @@
+body{
+    text-align: center;
+    background-color: blanchedalmond;
+    font-family: Arial;
+}
+
+h1{
+    color:crimson;
+}
+
+div{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 1%;
+    background-color: aquamarine;
+    font-weight: bold;
+
+}
+
+div.entradaNum{
+    border-top:    5px solid;
+    border-right:  5px solid; 
+    border-left: 5px solid;
+}
+div.muestraNum{
+    border-right:  5px solid; 
+    border-left: 5px solid;
+}
+div.obtenerNum{
+    border-bottom:    5px solid;
+    border-right:  5px solid; 
+    border-left: 5px solid;
+}
+
+input[type=submit]{
+    font-weight: bold;
+    box-shadow: 5px 5px 5px black;
+    background-color: coral;
+    text-align: center;
+}
