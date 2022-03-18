@@ -1,0 +1,64 @@
+<h1> Formulario Videojuegos</h1>
+
+<main>
+<div> 
+    <button (click)="insertar()" > Insertar </button>
+    <button (click)="modificar()" > Modificar </button>
+    <button (click)="borrar()" > Borrar </button>
+    <button (click)="vaciar()" > Vaciar </button>
+</div>
+<br>
+<div>
+    <label for="idHeroe">ID</label>
+    <div>
+        <input type="number" id="idHeroe"  value="{{id==0?'':id}}" [(ngModel)]="id"/>
+    </div>
+
+    <label for="titulo">Titulo</label>
+    <div>
+        <input id="titulo" [(ngModel)]="titulo"/>
+        <span class="rojo" [hidden]="tituloObligatorioOculto">El titulo es obligatorio</span>
+    </div>    
+
+    <label for="compania">Compañia</label>
+    <div>
+        <input id="compania" [(ngModel)]="compania"/>
+        <span class="rojo" [hidden]="companiaObligatorioOculto">La Compañia es obligatorio</span>
+    </div>
+
+    <label for="valoracion">Valoración Media</label>
+    <div>
+        <input type="number" id="valoracion" [(ngModel)]="valoracion"/>
+        <span class="rojo" [hidden]="valoracionObligatorioOculto">La valoración es obligatorio</span>
+    </div>
+    
+</div>    
+<br>
+<table>    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Compañia</th>
+            <th>Valoracion Media</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 
+            Recorremos la lista, y si pulsamos en alguna fila, ejecutaremos el metodo
+            "seleccionar", pasandole el heroe seleccionado
+        -->
+        <tr *ngFor="let v of listaVideojuegos" (click)="seleccionar(v)">
+            <td>{{ v.id }}</td>
+            <td>{{ v.titulo }}</td>
+            <td>{{ v.compania }}</td>
+            <td>{{ v.valoracion }}</td>
+        </tr>
+        <tr *ngIf="listaVideojuegos.length==0">
+            <td class="rojo" colspan="4">
+                No se han encontrado Videojuegos
+            </td>
+        </tr>
+    </tbody>
+</table> 
+</main>
