@@ -1,0 +1,15 @@
+<h1> Ejercicio Calculadora</h1>
+
+<div class="operandos">
+    Operando 1 <input type="number" id = "n1" placeholder="Introduce Número" [(ngModel)]="n1"/>
+    Operando 2 <input type="number" id = "n2" placeholder="Introduce Número" [(ngModel)]="n2"/>
+</div>
+<div class="calculo">
+  <button (click)="sumar()">+</button>
+  <button (click)="restar()" >-</button>
+  <button (click)="multiplicar()" >*</button>
+  <button (click)="dividir()" >/</button>
+</div>
+<div class="resultado">
+    Resultado <input type="number" id = "resultado" placeholder="Pulsa un botón" readonly="readonly" [(ngModel)]="resultado"/>
+</div>
