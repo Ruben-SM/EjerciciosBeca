@@ -1,0 +1,12 @@
+table{
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 5%;
+    background-color: aliceblue;
+    
+}
+
+td,th{
+    border: 1px #000 solid;
+}

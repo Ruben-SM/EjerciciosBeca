@@ -1,0 +1,15 @@
+<h1>
+  Bienvenido, Introduzca sus datos
+</h1>
+
+<div>
+  Usuario: <input type="text" name = "nombre" [(ngModel)]="nombre"/>
+  <p [hidden]="!MostrarErrorNombre">El nombre de usuario no existe</p>
+  <br/>
+  Contraseña: <input type="password" name = "pass" [(ngModel)]="pass"/>
+  <p [hidden]="!MostrarErrorPass">La contraseña es incorrecta</p>
+  <br/>
+  <input class = "boton" (click)="entrar()"  type="submit" value ="Validar" />
+</div>
+
+

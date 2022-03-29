@@ -1,0 +1,45 @@
+.titulo{
+    margin-left: 45%;
+}
+
+input.texto{
+    height: 10%;
+}
+
+form{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    border-style: solid;
+}
+
+input{  
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+
+.formulario{
+    display:inline;
+    float:left;
+    margin-left: 5%;
+} 
+
+.datos{
+    display:inline;
+    float:right;
+    margin-right: 20%;
+}
+
+footer{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+pre{
+    font-family: 'Times New Roman';
+}
+

@@ -1,0 +1,10 @@
+<td> {{ juego.id }} </td>
+<td> <a [routerLink]="['/detalle']" 
+    [queryParams]="{
+        id: juego.id,
+        titulo: juego.titulo,
+        compania: juego.compania, 
+        icono: juego.icono, 
+        valoracion: juego.valoracion}">
+    {{ juego.titulo }} </a> </td>
+<td><img src= {{juego.icono}} width = "50" height = "50"/></td>
