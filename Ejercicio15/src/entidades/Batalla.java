@@ -14,6 +14,8 @@ public class Batalla {
 		
 		// empieza a atacar siempre el personaje p1
 		
+		int turno = 1;
+		
 		int vidaP1 = p1.getVida();
 		int vidaP2 = p2.getVida();
 		
@@ -33,40 +35,29 @@ public class Batalla {
 		
 		do {
 
-			System.out.println("########################################");
+			System.out.println("###############TURNO "+turno+"#########################");
 			System.out.println();
 
-			if (p1.getArma() instanceof Rezo) {
-				danioP1 = p1.atacar();
-				vidaP1 += danioP1;
-				p1.setVida(vidaP1);
-				System.out.println("el personaje "+ p1.getNombre() + " se ha curado con "+ danioP1
-						+ "HP, ahora le quedan "+ vidaP1 + "HP");
-			}else {
-				danioP1 = p1.atacar();	
-				System.out.println("el personaje "+p2.getNombre() + " recibió " + danioP1+" pts de daño");
-				vidaP2 = p2.recibirDanio(danioP1);
-			}
+			danioP1 = p1.atacar();	
+			System.out.println("el personaje "+p2.getNombre() + " recibió " + danioP1+" pts de daño");
+			vidaP2 = p2.recibirDanio(danioP1);
+			System.out.println(p1.toString());
+			System.out.println(p2.toString());
 
 			
 			if(vidaP2<=0)
 				break;
 			
 			System.out.println();
-			
-			if(p2.getArma() instanceof Rezo) {
-				danioP2 = p2.atacar();
-				vidaP2 += danioP2;
-				p2.setVida(vidaP2);
-				System.out.println("el personaje "+ p2.getNombre() + " se ha curado con "+ danioP2
-						+ "HP, ahora le quedan "+ vidaP2 + "HP");
-			}else {
-				danioP2 =  p2.atacar();
-				System.out.println("el personaje "+p1.getNombre() + " recibió " + danioP2+" pts de daño");
-				vidaP1 = p1.recibirDanio(danioP2);
-			}
+		
+			danioP2 =  p2.atacar();
+			System.out.println("el personaje "+p1.getNombre() + " recibió " + danioP2+" pts de daño");
+			vidaP1 = p1.recibirDanio(danioP2);
+			System.out.println(p1.toString());
+			System.out.println(p2.toString());
 			
 			System.out.println();
+			turno++;
 			
 		} while( vidaP1 > 0 || vidaP2 > 0);
 		System.out.println();
@@ -80,9 +71,6 @@ public class Batalla {
 		System.out.println();
 		System.out.println("################# FINAL DE BATALLA #######################");
 		System.out.println();
-
-		p1.setVida(vidaP1);
-		p2.setVida(vidaP2);
 	}
 		
 	

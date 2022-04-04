@@ -21,8 +21,9 @@ public class Curandero extends Personaje{
 	public int atacar() {
 		System.out.println("el personaje "+ this.getNombre() +" va a atacar");
 		if (this.getArma() instanceof Rezo) {
-			System.out.println("tiene una bonificacion de " + sabiduria + " en ataque de curación");
-			return this.getArma().usar() + sabiduria ;
+			System.out.println("tiene una bonificacion de " + sabiduria + " en curación");
+			this.setVida( sabiduria + this.getVida());
+			return this.getArma().usar()  ;
 		}
 		return this.getArma().usar();
 		

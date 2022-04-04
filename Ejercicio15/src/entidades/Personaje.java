@@ -25,17 +25,33 @@ public abstract class Personaje {
 		this.vida = vida;
 	}
 	
-	public abstract int atacar();					// devuelve el daño que produce
 	
-	public int recibirDanio(int golpe) {			// devuelve la vida que le queda al personaje despues de recibir golpe
+	/**
+	 * Metodo para atacar
+	 * @return el daño que produce
+	 */
+	
+	public abstract int atacar();					
+	
+	
+	/**
+	 * 
+	 * @param daño que recibe
+	 * @return la vida que le queda al personaje despues de recibir golpe
+	 */
+	
+	public int recibirDanio(int golpe) {			
 		int vida = this.getVida();
 		this.setVida(vida-golpe);
 		vida = this.getVida();
-		if (vida >0)
-			System.out.println("al personaje "+ this.getNombre() + " le quedan "+ vida +" HP");
-		else 
-			System.out.println("al personaje "+ this.getNombre() + " le quedan 0 HP");
 		return vida;
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "Personaje [nombre=" + nombre + ", vida=" + vida + "]";
+	}
+	
+	
 }

@@ -20,7 +20,8 @@ public class Rezo extends Arma {
 
 	@Override
 	public int usar() {
-		System.out.println("Usando el arma rezo con "+ this.getCuracion() + " pts de salud");
+		
+		System.out.println("Usando el arma rezo con "+ this.getCuracion() + " pts de daño");
 		return this.getCuracion();
 	}
 
