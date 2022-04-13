@@ -5,23 +5,15 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.json.JSONObject;
-
-import com.google.gson.Gson;
 
 import modelo.entidad.Coche;
 import modelo.negocio.GestorCoche;
+import modelo.negocio.GestorUsuario;
 
 public class MainCoches {
 
@@ -29,8 +21,8 @@ public class MainCoches {
 		System.out.println("Bienvenidos a nuestra CRUD de coches");
 		Scanner sc = new Scanner(System.in);
 		boolean fin = false;
-		GestorCoche gp = new GestorCoche();
 		
+		GestorCoche gp = new GestorCoche();		
 		int id;
 		String matricula;
 		String marca;
@@ -39,24 +31,51 @@ public class MainCoches {
 		Coche c;
 		List<Coche> listaCoches = new ArrayList<Coche>();
 		
+		GestorUsuario gu = new GestorUsuario();
 		final int MAX_ERROR = 3;
 		String nombre, password;
 		boolean identificado = false;
-		int contador = 0;
-		
+		boolean insertado;
+		int contador;
 		do {
-			contador++;
-			System.out.println("Introduce el usuario");
-			nombre = sc.next();
-			System.out.println("Introduce la contraseña");
-			password = sc.next();
+			contador = 0;
+			menuUsuario();
+			int opcion = sc.nextInt();
+			switch(opcion) {
+			case 1:
+				System.out.println("Introduce el usuario");
+				nombre = sc.next();
+				System.out.println("Introduce la contraseña");
+				password = sc.next();
+				insertado = gu.insertarUsuario(nombre, password);
+				if (insertado)
+					System.out.println("Usuario insertado");
+				break;
+			case 2:
+				do {
+					contador++;
+					System.out.println("Introduce el usuario");
+					nombre = sc.next();
+					System.out.println("Introduce la contraseña");
+					password = sc.next();
+					
+					identificado = gu.validarUsuario(nombre, password);
+					
+					if (identificado)
+						System.out.println("Usuario validado");
+					else {
+						System.out.println("Error al validar usuario");
+					}
+					
+					}while(!identificado && contador < MAX_ERROR);
+				break;
+			case 3:
+				fin = true;
+				break;
+			}
 			
-			identificado = validarUsuario(nombre, password);
 			
-			if (identificado)
-				System.out.println("Usuario validado");
-			
-			}while(!identificado && contador < MAX_ERROR);
+			}while(!identificado && contador < MAX_ERROR && !fin);
 			
 		if (contador == MAX_ERROR)
 			System.out.println("Has llegado al numero maximo de intentos");
@@ -245,36 +264,7 @@ public class MainCoches {
 
 	}
 	
-	/**
-	 * Metodo de validación de usuario introducido por argumentos
-	 * @param nombre de usuario
-	 * @param password del usuario
-	 * @return true si el usuario ha sido validado, false en caso contrario
-	 */
-	private static boolean validarUsuario(String nombre, String password) {
-		try {
-			HttpRequest request = HttpRequest.newBuilder()
-					  .uri(new URI("http://localhost:8080/Ejercicio21/usuarios/login?nombre="
-							  +nombre+"&password="+password))
-					  .GET()
-					  .build();
-			
-			HttpClient client = HttpClient.newHttpClient();
-			
-			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-			JSONObject json = new JSONObject(response.body());
-			return json.getBoolean("validado");
 
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-						
-		return false;
-	}
 
 	private static void menu() {
 		System.out.println("Elija una opción:");
@@ -289,6 +279,13 @@ public class MainCoches {
 		System.out.println("9- Salir del programa");
 		System.out.println("10- Exportar los coches a un fichero en formato JSON");
 		System.out.println("11- Exportar los coches a un fichero excel");
+	}
+	
+	private static void menuUsuario() {
+		System.out.println("Elija una opción:");
+		System.out.println("1- Alta de Usuario");
+		System.out.println("2- Validar Usuario ");
+		System.out.println("3- Salir del programa");
 	}
 	
 
