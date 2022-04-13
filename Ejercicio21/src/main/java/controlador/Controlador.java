@@ -1,12 +1,6 @@
 package controlador;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,9 +13,7 @@ import org.json.JSONObject;
 import modelo.entidad.Usuario;
 import modelo.negocio.GestorUsuario;
 
-/**
- * Servlet implementation class Controlador
- */
+
 @WebServlet("/usuarios/login")
 public class Controlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -42,14 +34,28 @@ public class Controlador extends HttpServlet {
 
 		JSONObject json = new JSONObject();
 		json.put("validado", validado);
-
+		
+		response.addHeader("Access-Control-Allow-Origin", "http://localhost:4200");	// permitir la petición de código del origen web angular
 		response.setContentType("application/json");
 		response.getWriter().write(json.toString());
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		String nombre = request.getParameter("nombre");
+		String password = request.getParameter("password");
+		
+		Usuario usuario = new Usuario(nombre,password);
+		GestorUsuario gu = new GestorUsuario();
+		
+		boolean validar = gu.insertarUsuario(usuario);
+		
+		JSONObject json = new JSONObject();
+		json.put("insertado", validar);
+		
+		response.setContentType("application/json");
+		response.getWriter().write(json.toString());
+		
 	}
 
 }

@@ -43,6 +43,12 @@ public class GestorUsuario {
 		du.insertarUsuario(user);
 	}
 	
+	public boolean insertarUsuario(Usuario usuario) {
+		DaoUsuario du = new DaoUsuario();
+		return du.insertarUsuario(usuario);
+		
+	}
+	
 	/**
 	 * Comprueba que el usuario Jose esta en la BBDD
 	 * @return true si el usuario esta en la BBDD, false en caso contrario
