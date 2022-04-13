@@ -11,6 +11,7 @@ import { JuegoComponent } from './componentes/juego/juego.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { MenuComponent } from './componentes/menu/menu.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [	
@@ -26,7 +27,9 @@ import { MenuComponent } from './componentes/menu/menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
