@@ -1,0 +1,24 @@
+div.izq{
+    display:inline;
+    float: left;
+    margin-left: 5%;
+}
+
+div.der{
+    display: inline;
+    float: right;
+    margin-top: 5%;
+    margin-right: 20%;
+}
+
+footer{
+    position: absolute;
+    bottom: 30%;
+    margin-left: 20px;
+    width: 100%;
+}
+
+p{
+    font-size: 20px;
+    font-family: 'Times New Roman';
+}

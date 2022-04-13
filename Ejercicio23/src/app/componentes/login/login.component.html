@@ -1,0 +1,14 @@
+<h1>
+  Bienvenido, Introduzca sus datos
+</h1>
+
+<div>
+  <p [hidden]="!MostrarErrorUsuario">Los datos insertados no son validos </p>
+  Usuario: <input type="text" name = "nombre" [(ngModel)]="nombre"/>
+  <br/>
+  Contraseña: <input type="password" name = "pass" [(ngModel)]="password"/>
+  <br/>
+  <input class = "boton" (click)="login()"  type="submit" value ="Validar" />
+</div>
+
+

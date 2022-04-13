@@ -1,0 +1,17 @@
+<div [hidden]="!logueado">
+<h1 >Bienvenido  {{nombre}} </h1>
+</div>
+<table>    
+  <thead>
+      <tr>
+          <th>Listado de videojuegos</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let j of listaJuegos" (click)="seleccionar(j)">
+      <app-juego  [juego]="j"></app-juego>
+    </tr>
+</tbody>
+</table> 
+
+<button routerLink="/login">Volver al login</button> 

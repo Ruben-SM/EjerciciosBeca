@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+th{
+    background-color: coral;
+}
+table{
+    background-color: azure;
+    border: 1px #000 solid;
+    border-spacing: "5px";
+    border-collapse: separate;
+    padding: "10px";
+
+}
+
+table,tr,th{
+    border: 1px #000 solid; 
+    border-width: 2px;
+    width: 40%;
+    text-align: center;
+}
+
+body{
+    background-color: rgb(200, 252, 200);
+}
+
+button{
+    margin-top: 1%;
+    margin-left: 45%;
+    padding: 1%;
+    font-weight: bold;
+    background-color: coral;
+    font-size: 15px;
+    text-align: center;
+}
